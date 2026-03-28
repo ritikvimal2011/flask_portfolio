@@ -1,4 +1,4 @@
-app.py
-requirements.txt
-templates/
-static/
+Flask
+openai
+flask-mail
+gunicorn
