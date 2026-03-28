@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    height: 100vh;
+}
+
+/* Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Heading */
+.contact-card h2 {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-box {
+    margin: 15px 0;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* Success Message */
+#success-msg {
+    margin-top: 15px;
+    color: lightgreen;
+    display: none;
+}
+
+/* Social Icons */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    margin: 0 10px;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #00c6ff;
+}

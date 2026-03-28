@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ritik Vimal - Contact</title>
+
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            perspective: 1000px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 0 30px rgba(0,198,255,0.7);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,198,255,0.2), transparent);
+            animation: moveBg 10s linear infinite;
+        }
+
+        @keyframes moveBg {
+            0% { transform: translate(0,0); }
+            50% { transform: translate(-25%, -25%); }
+            100% { transform: translate(0,0); }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #00c6ff;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0072ff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contact-container">
+    <div class="contact-card">
+        <h2>Contact Information</h2>
+
+        <p>📧 ritikvimal2011@gmail.com</p>
+        <p>📱 6398971619</p>
+
+        <a href="tel:6398971619" class="btn">📞 Call Now</a>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Typing Effect
+    let text = "Let's Connect 🚀";
+    let i = 0;
+
+    function typeEffect() {
+        let heading = document.querySelector(".contact-card h2");
+
+        if (heading && i < text.length) {
+            heading.innerHTML = text.substring(0, i + 1);
+            i++;
+            setTimeout(typeEffect, 60);
+        }
+    }
+
+    typeEffect();
+
+    // Mouse 3D Effect
+    document.addEventListener("mousemove", (e) => {
+        let card = document.querySelector(".contact-card");
+
+        if (card) {
+            let x = (window.innerWidth / 2 - e.pageX) / 25;
+            let y = (window.innerHeight / 2 - e.pageY) / 25;
+
+            card.style.transform =
+                `perspective(1000px) rotateY(${x}deg) rotateX(${y}deg)`;
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
